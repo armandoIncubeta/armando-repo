@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Tails Draft Template</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<!-- Studio Enabler Required -->
+		<script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+		<!-- Animation Library Required -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+		<script src="Draggable.min.js"></script>
+		<script src="InertiaPlugin.min.js"></script>
+		
+		
+		<!-- Adtech Libraries -->
+		<!-- Ad Tech CSS Library -->
+		<link rel="stylesheet" type="text/css" href="atd-css-library.css" />
+		<!-- Ad Tech JavaScript Library -->
+		<script type="text/javascript" src="atd-js-library.js"></script>
+
+		<!-- Adtech Templates -->
+		<!-- Project Based CSS File -->
+		<link rel="stylesheet" type="text/css" href="atd-main.css" />
+		<!-- Project Based JavaScript Template -->
+		<script type="text/javascript" src="atd-main.js"></script>
+
+		<!-- Adtech SNIPPET Template (for SC usage)  -->
+		<script type="text/javascript">
+			// ─────────────────────────────────────────────────────────────────────────────
+			// ─── Dynamic Snippet ─────────────────────────────────────────────────────────
+			// ─────────────────────────────────────────────────────────────────────────────
+			var snippet = (function () {
+				var _this = {};
+
+				_this.init = function () {
+					// Enabler.setProfileId(10768416);
+
+					// ─────────────────────────────────────────────────────────────
+					// ─── Seamless Feed Example ───────────────────────────────────
+					// ─────────────────────────────────────────────────────────────
+					var devDynamicContent = {};
+					devDynamicContent.SeamlessFeed = [{}];
+					devDynamicContent.SeamlessFeed[0]._id = 0;
+					devDynamicContent.SeamlessFeed[0].DYNAMIC_ELEMENTS = '';
+					devDynamicContent.SeamlessFeed[0].a0_exit__url = {};
+					devDynamicContent.SeamlessFeed[0].a0_exit__url.Url = 'https://www.google.com'; 
+					devDynamicContent.SeamlessFeed[0].a0_preloader__img = {};
+					devDynamicContent.SeamlessFeed[0].a0_preloader__img.Url = 'https://adpreview.incubeta.com/preloader/spin-1.gif';
+					// ─────────────────────────────────────────────────────────────
+					devDynamicContent.SeamlessFeed[0].a1_mainLogo__img = {};
+					devDynamicContent.SeamlessFeed[0].a1_mainLogo__img.Url = 'https://loreal.creatives.myseamless.io/dreamapi/testFolder/Paris/logoParis.png';
+					devDynamicContent.SeamlessFeed[0].a1_cta__text = "LEARN MORE 1";
+					devDynamicContent.SeamlessFeed[0].a1_cta__json = "{\"css\":{\"font-size\": \"9px\", \"background-color\": \"#71A68B\", \"color\":\"#FFFFFF\"}}";
+					devDynamicContent.SeamlessFeed[0].a1_headline__text = 'Headline Frame 1';
+					devDynamicContent.SeamlessFeed[0].a1_headline__json = '{"config":{"fontColour__hex": "#ffffff","fontSize__select": 26}}';
+					devDynamicContent.SeamlessFeed[0].a1_subline__json = '{\n    "config": {\n        "value": "SUBLINE FRAME 1",\n        "show__select": "yes",\n        "fontColour__hex": "#ffffff"\n    }\n}';
+					devDynamicContent.SeamlessFeed[0].a1_bgImage__img = {};
+					devDynamicContent.SeamlessFeed[0].a1_bgImage__img.Url = 'https://adpreview.incubeta.com/hyundai/images/f1-bg.jpg';
+					// ─────────────────────────────────────────────────────────────
+					devDynamicContent.SeamlessFeed[0].a2_bgImage__img = {};
+					devDynamicContent.SeamlessFeed[0].a2_bgImage__img.Url = 'https://adpreview.incubeta.com/hyundai/images/f2-bg.jpg';
+					devDynamicContent.SeamlessFeed[0].a2_cta__json = '{\n    "config": {\n        "textValue__text": "LEARN MORE 2",\n "fontColour__hex": "#FFFFFF",\n "bgColour__hex": "#002C5F",\n  "textFontSize__number": 10\n    }\n}';
+					devDynamicContent.SeamlessFeed[0].a2_headline__text = 'Headline Frame 2';
+					devDynamicContent.SeamlessFeed[0].a2_headline__json = '{"config":{"fontColour__hex": "#ffffff","fontSize__select": 26}}';
+					devDynamicContent.SeamlessFeed[0].a2_subline__json = '{\n    "config": {\n        "value": "SUBLINE FRAME 2",\n        "show__select": "yes",\n        "fontColour__hex": "#ffffff"\n    }\n}';
+					// ─────────────────────────────────────────────────────────────
+					devDynamicContent.SeamlessFeed[0].a3_bgImage__img = {};
+					devDynamicContent.SeamlessFeed[0].a3_bgImage__img.Url = 'https://adpreview.incubeta.com/hyundai/images/f3-bg.jpg';
+					devDynamicContent.SeamlessFeed[0].a3_cta__json = '{\n    "config": {\n        "textValue__text": "LEARN MORE 3",\n "fontColour__hex": "#FFFFFF",\n "bgColour__hex": "#002C5F",\n  "textFontSize__number": 10\n    }\n}';
+					devDynamicContent.SeamlessFeed[0].a3_headline__text = 'Headline Frame 3';
+					devDynamicContent.SeamlessFeed[0].a3_headline__json = '{"config":{"fontColour__hex": "#ffffff","fontSize__select": 26}}';
+					devDynamicContent.SeamlessFeed[0].a3_subline__json = '{\n    "config": {\n        "value": "SUBLINE FRAME 3",\n        "show__select": "yes",\n        "fontColour__hex": "#ffffff"\n    }\n}';
+
+					// ─── Utm Naming Standards ────────────────────────────────────
+					devDynamicContent.SeamlessFeed[0].utm_source = 'utmsourcetest';
+					devDynamicContent.SeamlessFeed[0].utm_medium = 'utmmediumtest';
+					devDynamicContent.SeamlessFeed[0].utm_campaign = 'utmcampaigntest';
+					devDynamicContent.SeamlessFeed[0].utm_term = 'utmtermtest';
+					devDynamicContent.SeamlessFeed[0].utm_content = 'utmcontenttest';
+
+					// ─────────────────────────────────────────────────────────────
+					// ─── Helper Feed Example ─────────────────────────────────────
+					// ─────────────────────────────────────────────────────────────
+					devDynamicContent.HelperFeed = [{}];
+					devDynamicContent.HelperFeed[0]._id = 0;
+					devDynamicContent.HelperFeed[0].Color_hex = '#BD6238';
+
+					// ─────────────────────────────────────────────────────────────
+					// ─── Product Feed Example ────────────────────────────────────
+					// ─────────────────────────────────────────────────────────────
+					devDynamicContent.ProductFeed = [{}, {}];
+					devDynamicContent.ProductFeed[0]._id = 0;
+					// ─────────────────────────────────────────────────────────────
+					devDynamicContent.ProductFeed[0].productName = 'name 1';
+					devDynamicContent.ProductFeed[0].imageLink = {};
+					devDynamicContent.ProductFeed[0].imageLink.Url = 'https://loreal.creatives.myseamless.io/dreamapi/testFolder/Paris/2.jpg';
+					devDynamicContent.ProductFeed[0].productPageUrl = {};
+					devDynamicContent.ProductFeed[0].productPageUrl.Url = 'https://www.loreal-paris.de/preference/74-dublin-kupferblond';
+					// ─────────────────────────────────────────────────────────────────
+					devDynamicContent.ProductFeed[1].productName = 'name 2';
+					devDynamicContent.ProductFeed[1].imageLink = {};
+					devDynamicContent.ProductFeed[1].imageLink.Url = 'https://loreal.creatives.myseamless.io/dreamapi/testFolder/Paris/1.jpg';
+					devDynamicContent.ProductFeed[1].productPageUrl = {};
+					devDynamicContent.ProductFeed[1].productPageUrl.Url = 'https://www.loreal-paris.de/preference/4-tahiti-naturbraun';
+
+					Enabler.setDevDynamicContent(devDynamicContent);
+
+
+					// ─── Object Assignments ──────────────────────────────────────
+					/**
+					 * Use this to easily access dynamic contents from the
+					 * 3 different feeds.
+					 * 
+					 * Usage:
+					 * snippet.SF.a1_headline__text
+					 * snippet.HF.Color_hex
+					 * snippet.PF[0].productName
+					 * 
+					 */
+					_this.SF = dynamicContent.SeamlessFeed[0];
+					_this.HF = dynamicContent.HelperFeed;
+					_this.PF = dynamicContent.ProductFeed;
+				};
+
+				return _this;
+			})();
+
+		</script>
+	</head>
+
+	<body>
+		<div class="container-dc rel">
+			<!-- PRELOADER -->
+			<div class="frame frame0 full-wh abs">
+				<img class="preloader center-x-y" />
+			</div>
+
+			<!-- FRAME 1 START -->
+			<div class="frame frame1 full-wh abs">
+				<div class="bg-image abs-xy"></div>
+				<div class="abs">FRAME 1</div>
+				<div class="logo-top abs-x full-w">
+					<img class="center-x" src="images/logo-top-tails.svg">
+				</div>
+				<div class="headline abs center-x">Discover your dog’s unique recipe</div>
+
+				<div class="bottom-container abs full-w">
+
+					<div class="dog-container abs center-x full-h">
+						<div class="item item-1 abs full-w">
+							<div class="headline-dog-size abs center-x">DOG 1</div>
+							<div class="dog-scaler abs full-w">
+								<div class="dog-image abs center-x"><img src="images/dog-toy-Image-container-1x1.png"></div>
+							</div>
+							
+						</div>
+
+						<div class="item item-2 abs full-w">
+							<div class="headline-dog-size abs center-x">DOG 2</div>
+							<div class="dog-scaler abs full-w">
+								<div class="dog-image abs center-x"><img src="images/dog-medium-Image-container-1x1.png"></div>
+							</div>
+							
+						</div>
+
+
+						<div class="item item-3 abs full-w">
+							<div class="headline-dog-size abs center-x">DOG 3</div>
+							<div class="dog-scaler abs full-w">
+								<div class="dog-image abs center-x"><img src="images/dog-large-Image-container-1x1.png"></div>
+							</div>
+						</div>
+
+						<div class="item item-4 abs full-w">
+							<div class="headline-dog-size abs center-x">DOG 4</div>
+							<div class="dog-scaler abs full-w">
+								<div class="dog-image abs center-x"><img src="images/dog-giant-Image-container-1x1.png"></div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="slider-parent abs center-x">
+						<div class="slider-bg abs full-wh "></div>
+						<div class="slider-progress abs full-h bg_3E4C60"></div>
+						<div class="slider-knob abs bg_3E4C60"></div>
+					</div>
+
+				</div>
+				
+
+			</div>
+
+			<!-- FRAME 2 START -->
+			<div class="frame frame2 full-wh abs">
+				<div class="bg-image abs-xy"></div>
+				
+			</div>
+
+			<!-- FRAME 3 START -->
+			<div class="frame frame3 full-wh abs">
+				<div class="bg-image abs-xy"></div>
+				
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,182 @@
+/* ────────────────────────────────────────────────────────────────────────── */
+/* ─── Adtech Css Library ─────────────────────────────────────────────────── */
+/* ────────────────────────────────────────────────────────────────────────── */
+
+/* ─── Global Settings ────────────────────────────────────────────────────── */
+
+@charset 'UTF-8';
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    vertical-align: baseline;
+    -webkit-user-select: none; /* Safari 3.1+ */
+       -moz-user-select: none; /* Firefox 2+ */
+        -ms-user-select: none; /* IE 10+ */
+            user-select: none; /* Standard syntax */
+    border: 0;
+    outline: 0;
+}
+:focus {
+    outline: none;
+}
+::-moz-focus-inner {
+    border: 0;
+}
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* ─── Helper Classes ─────────────────────────────────────────────────────── */
+
+.rel {
+    position: relative;
+}
+.abs {
+    position: absolute;
+}
+.abs-x {
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+.abs-y {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+.abs-xy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.full-w {
+    width: 100%;
+}
+.full-h {
+    height: 100%;
+}
+.full-wh {
+    width: 100%;
+    height: 100%;
+}
+.center-x {
+    position: absolute;
+    left: 50%;
+    margin: auto;
+    -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+}
+.center-y {
+    position: absolute;
+    top: 50%;
+    margin: auto;
+    -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+}
+.center-x-y {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    -ms-transform: translateY(-50%) translateX(-50%);
+        transform: translateY(-50%) translateX(-50%);
+}
+.z1 {
+    z-index: 1!important;
+}
+.z2 {
+    z-index: 2!important;
+}
+.z3 {
+    z-index: 3!important;
+}
+.z4 {
+    z-index: 4!important;
+}
+.z5 {
+    z-index: 5!important;
+}
+.z6 {
+    z-index: 6!important;
+}
+.z7 {
+    z-index: 7!important;
+}
+.z8 {
+    z-index: 8!important;
+}
+.z9 {
+    z-index: 9!important;
+}
+.z100 {
+    z-index: 100!important;
+}
+.z200 {
+    z-index: 200!important;
+}
+.z300 {
+    z-index: 300!important;
+}
+.z400 {
+    z-index: 400!important;
+}
+.z500 {
+    z-index: 500!important;
+}
+.vln1 {
+    display: -webkit-box;
+    overflow: hidden;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.vln2 {
+    display: -webkit-box;
+    overflow: hidden;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.vln3 {
+    display: -webkit-box;
+    overflow: hidden;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.vln4 {
+    display: -webkit-box;
+    overflow: hidden;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+.vln5 {
+    display: -webkit-box;
+    overflow: hidden;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+}
+.hand {
+    cursor: pointer;
+}
+.rem {
+    display: none;
+}
+.hide {
+    opacity: 0;
+}
+/* ─── Font Embed ─────────────────────────────────────────────────────────── */
+
+@font-face {
+    src: url('location-to-font-file.woff2') format('woff2'),
+    url('location-to-font-file.woff') format('woff');
+    font-family: 'font-name';
+    font-weight: normal;
+    font-style: normal;
+}
