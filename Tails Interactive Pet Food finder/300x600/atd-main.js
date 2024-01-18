@@ -1,6 +1,8 @@
 gsap.registerPlugin(Draggable) 
 gsap.registerPlugin(InertiaPlugin) 
-
+// ─────────────────────────────────────────────────────────────────────────────
+// ─── Global Variables ─────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 
 // ─────────────────────────────────────────────────────────────────────────────
 // ─── Doubleclick Boilerplate ─────────────────────────────────────────────────
@@ -74,11 +76,15 @@ var dogSlider = (function () {
 
 		let currentSelectedItem = 1; // Initialize with the default selected item
 		let isAnimating = false; // Flag to track whether an animation is in progress
-		
+		let introRemove = false;
 		gsap.set('.item .dog-scaler', { scale: 0, opacity: 0 });
-		gsap.set('.item-1 .dog-scaler', { scale: .8, opacity: 1 });
-		gsap.set('.item-1 .headline-dog-size', { opacity: 0 });
+		gsap.set('.item-1 .dog-scaler', { scale: .8, opacity: 1, y: 19 });
+		gsap.set('.item .headline-dog-size', { opacity: 0 });
+		gsap.set('.item-1 .headline-dog-size', { opacity: 1 });
 
+		// Frame 1 headline present - if dog changed via slider, it will hide and never show again
+		adTech.addClass(adTech.elem('.item-1 .headline-dog-size'), 'headline-dog-size-intro');
+		
 		function showDog(point) {
 			if (isAnimating || point === currentSelectedItem) {
 				// If an animation is already in progress or the requested item is already selected, do nothing
@@ -96,11 +102,16 @@ var dogSlider = (function () {
 			// Remove the 'animated' class from all dog containers and headlines
 			document.querySelectorAll('.dog-scaler').forEach(dog => dog.classList.remove('animated'));
 			document.querySelectorAll('.headline-dog-size').forEach(headline => headline.classList.remove('animated'));
-		
 			// Animate out the current dog and headline
-			gsap.to('.dog-scaler', { scale: 0, opacity: 0, duration: 0.3, ease: 'power2.out' });
+			if (!introRemove) {
+				gsap.to('.headline-question-1', { opacity: 0, duration: 0.3, ease: 'power2.out', onComplete: function () {
+					adTech.removeClass(adTech.elem('.item-1 .headline-dog-size'), 'headline-dog-size-intro');
+				} });
+				introRemove = true;
+			}
+
+			gsap.to('.dog-scaler', { scale: 0, opacity: 0, y: 0, duration: 0.3, ease: 'power2.out' });
 			gsap.to('.headline-dog-size', { opacity: 0, duration: 0.3, ease: 'power2.out' });
-		
 			// Animate in the selected item
 			gsap.fromTo(
 				currentDogContainer,
@@ -128,7 +139,8 @@ var dogSlider = (function () {
 		const containerWidth = document.querySelector(".slider-parent").clientWidth;
 		let progressBarWidth = 0;
 		let percentage;
-
+		let targetPoint;
+		
 		function updateProgressBar() {
 
 			const knob = document.querySelector(".slider-knob");
@@ -138,28 +150,27 @@ var dogSlider = (function () {
 			percentage = (knobPosition / containerWidth) * 100;
 			progressBarWidth = percentage;
 			gsap.to(".slider-progress", { width: `${progressBarWidth}%`, duration: 0.1 });
-
+			console.log("percent", percentage)
 			updateOnPercentage();
 
 		}
 		
 		function updateOnPercentage() {
-			let targetPoint;
 
-			if (percentage >= 75) {
-				console.log("point 4");
+			if (percentage >= 90) {
+				// console.log("point 4");
 				targetPoint = 4;
-			} else if (percentage >= 50) {
-				console.log("point 3");
+			} else if (percentage >= 70) {
+				// console.log("point 3");
 				targetPoint = 3;
-			} else if (percentage >= 25) {
-				console.log("point 2");
+			} else if (percentage >= 30) {
+				// console.log("point 2");
 				targetPoint = 2;
 			} else if (percentage >= 0) {
-				console.log("point 1");
+				// console.log("point 1");
 				targetPoint = 1;
 			} else {
-				console.log("none");
+				// console.log("none");
 				return;
 			}
 
@@ -167,54 +178,30 @@ var dogSlider = (function () {
 			showDog(targetPoint);
 		}
 
-
-
-		// Draggable.create(".slider-knob", {
-		// 	type: "x",
-		// 	bounds: document.getElementsByClassName("slider-parent"),
-		// 	inertia: true,
-		// 	snap: function (value) {
-		// 		const percentage = (value / containerWidth) * 100;
-		// 		return Math.round(percentage / 25) * 25; // Snap to the closest multiple of 25%
-		// 	  },
-		// 	onDrag: updateProgressBar,
-		// 	// onDragEnd: updateOnPercentage, // Snaps to the nearest point only on drag end
-		// });
-
 		Draggable.create(".slider-knob", {
 			type: "x",
 			bounds: document.getElementsByClassName("slider-parent"),
 			inertia: true,
+			throwResistance: 1000,
 			snap: function (value) {
 				const percentage = (value / containerWidth) * 100;
-				const snapPoints = [0, 25, 50, 75, 100];
+				const snapPoints = [0, 30, 70, 100];
 				const closestSnapPoint = snapPoints.reduce((prev, curr) =>
 					Math.abs(curr - percentage) < Math.abs(prev - percentage) ? curr : prev
 				);
 				return (closestSnapPoint / 100) * containerWidth;
 			},
 			onDrag: updateProgressBar,
-			onThrowUpdate: updateProgressBar, // Update progress bar during inertia
-			endSpeed: 1, // Adjust endSpeed for potentially faster inertia
-
+			onThrowUpdate: function () {
+				updateProgressBar(); // Update progress bar during inertia
+			},
+			onThrowComplete: function () {
+				// Additional callback after inertia is complete (if needed)
+			},
+			
 		});
-		
-		
-
 		// Initialize progress bar
 		updateProgressBar();
-		
-
-		
-		// Rest of the code remains the same...
-		
-		
-		// Rest of the code remains the same...
-		
-		
-		// Rest of the code remains the same...
-		
-		
 		
 
 		// ---
@@ -233,7 +220,7 @@ var mapData = (function () {
 	_this.init = function () {
 	
         // ─── Intro Frame - Preloader ─────────────────────────────────
-		adTech.elem('.preloader').src = snippet.SF.a0_preloader__img.Url;
+		// adTech.elem('.preloader').src = snippet.SF.a0_preloader__img.Url;
 
 		// ─── Frame 1 ─────────────────────────────────────────────────
 		var frameLabel = '.frame1';

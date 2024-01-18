@@ -8,8 +8,6 @@
     font-display: swap;
 }
 
-
-
 .container-dc {
     width: 300px;
     height: 600px;
@@ -20,32 +18,106 @@
 .frame { top: 0; opacity: 0; }
 .preloader{ width: 60px; height: 60px; }
 
-/* TOP AREA */
-.logo-top {
-    top: 14.5px;
-}
-.logo-top img {
-    max-height: 74.99px;
-}
+/*
+ * ─── GLOBAL ─────────────────────────────────────────────────────────────────────
+ */
+
+
+.bg_3E4C60 {background-color: #3E4C60; }
+
+.logo-top { top: 14.5px; }
+
+.logo-top img { max-height: 74.99px; }
 
 .headline {
     font-family: 'Jeff Script';
-    top: 115px;
-    width: 250px;
-    font-size: 27px;
+    font-size: 25.8px;
     text-align: center;
     letter-spacing: 0.1px;
+    top: 144px;
+    left: 25px;
+    right: 25px;
+}
+.headline-question-1 { 
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    bottom: 380px;
+    width: 250px;
+    left: 25px;
+    right: auto;
+}
+.headline-question-1 p {
+    line-height: 25px;
+}
+.headline-question-2 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: normal;
+    font-size: 17px;
+    width: 250px;
+    bottom: 146px;
+}
+.headline-question-2 p {
+    line-height: 25px;
 }
 
 
-/* BOTTOM AREA */
-.bottom-container {
-    bottom: 0px;
-    height: 413px;
-    background-color: #E4E6FD;
+.headline-dog-size {
+    font-family: 'Jeff Script';
+    top: 19px;
+    font-size: 23px;
 }
+.headline-dog-size-intro {
+    top: 57px;
+}
+
+.headline-slider-parent {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    width: 231px;
+    bottom: 91px;
+}
+.headline-slider-a {
+    left: 0;
+}
+.headline-slider-b {
+    right: 0;
+}
+/* CTA Next page for f1->f2 */
+.cta-container-a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    width: 101px;
+    height: 32px;
+    bottom: 20px;
+    margin: auto;
+    border-radius: 21px;
+    background-color: #FFFFFF;
+}
+.cta-container-a p{
+    left: 0; right: 0;
+    text-align:center;	
+}
+
+/* DOG CONTAINER */
+
+.dog-container {
+    top: 0px;
+    width: 250px;
+}
+
+.dog-scaler {
+    height: 190px;
+    width: 100%;
+    top: 53px;
+    transform-origin: center center;
+}
+
+
+
 /* SLIDER CSS */
-.bg_3E4C60 {background-color: #3E4C60; }
 
 .slider-parent {
     bottom: 111px;
@@ -71,17 +143,8 @@
 }
 /* SLIDER CSS END */
 
-
-/* DOG CONTAINER */
-
-.dog-container {
-    top: 0px;
-    width: 250px;
-}
-
-.dog-scaler {
-    height: 190px;
-    width: 100%;
-    top: 53px;
-    transform-origin: center center;
+.bottom-container {
+    bottom: 0px;
+    height: 413px;
+    background-color: #E4E6FD;
 }

@@ -6,6 +6,9 @@
 		<title>Tails Draft Template</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 		<!-- Studio Enabler Required -->
 		<script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
 		<!-- Animation Library Required -->
@@ -37,76 +40,116 @@
 				_this.init = function () {
 					// Enabler.setProfileId(10768416);
 
-					// ─────────────────────────────────────────────────────────────
-					// ─── Seamless Feed Example ───────────────────────────────────
-					// ─────────────────────────────────────────────────────────────
+				
+					// Dynamic Content variables and sample values
+					// Enabler.setProfileId(10881676);
 					var devDynamicContent = {};
-					devDynamicContent.SeamlessFeed = [{}];
-					devDynamicContent.SeamlessFeed[0]._id = 0;
-					devDynamicContent.SeamlessFeed[0].DYNAMIC_ELEMENTS = '';
-					devDynamicContent.SeamlessFeed[0].a0_exit__url = {};
-					devDynamicContent.SeamlessFeed[0].a0_exit__url.Url = 'https://www.google.com'; 
-					devDynamicContent.SeamlessFeed[0].a0_preloader__img = {};
-					devDynamicContent.SeamlessFeed[0].a0_preloader__img.Url = 'https://adpreview.incubeta.com/preloader/spin-1.gif';
-					// ─────────────────────────────────────────────────────────────
-					devDynamicContent.SeamlessFeed[0].a1_mainLogo__img = {};
-					devDynamicContent.SeamlessFeed[0].a1_mainLogo__img.Url = 'https://loreal.creatives.myseamless.io/dreamapi/testFolder/Paris/logoParis.png';
-					devDynamicContent.SeamlessFeed[0].a1_cta__text = "LEARN MORE 1";
-					devDynamicContent.SeamlessFeed[0].a1_cta__json = "{\"css\":{\"font-size\": \"9px\", \"background-color\": \"#71A68B\", \"color\":\"#FFFFFF\"}}";
-					devDynamicContent.SeamlessFeed[0].a1_headline__text = 'Headline Frame 1';
-					devDynamicContent.SeamlessFeed[0].a1_headline__json = '{"config":{"fontColour__hex": "#ffffff","fontSize__select": 26}}';
-					devDynamicContent.SeamlessFeed[0].a1_subline__json = '{\n    "config": {\n        "value": "SUBLINE FRAME 1",\n        "show__select": "yes",\n        "fontColour__hex": "#ffffff"\n    }\n}';
-					devDynamicContent.SeamlessFeed[0].a1_bgImage__img = {};
-					devDynamicContent.SeamlessFeed[0].a1_bgImage__img.Url = 'https://adpreview.incubeta.com/hyundai/images/f1-bg.jpg';
-					// ─────────────────────────────────────────────────────────────
-					devDynamicContent.SeamlessFeed[0].a2_bgImage__img = {};
-					devDynamicContent.SeamlessFeed[0].a2_bgImage__img.Url = 'https://adpreview.incubeta.com/hyundai/images/f2-bg.jpg';
-					devDynamicContent.SeamlessFeed[0].a2_cta__json = '{\n    "config": {\n        "textValue__text": "LEARN MORE 2",\n "fontColour__hex": "#FFFFFF",\n "bgColour__hex": "#002C5F",\n  "textFontSize__number": 10\n    }\n}';
-					devDynamicContent.SeamlessFeed[0].a2_headline__text = 'Headline Frame 2';
-					devDynamicContent.SeamlessFeed[0].a2_headline__json = '{"config":{"fontColour__hex": "#ffffff","fontSize__select": 26}}';
-					devDynamicContent.SeamlessFeed[0].a2_subline__json = '{\n    "config": {\n        "value": "SUBLINE FRAME 2",\n        "show__select": "yes",\n        "fontColour__hex": "#ffffff"\n    }\n}';
-					// ─────────────────────────────────────────────────────────────
-					devDynamicContent.SeamlessFeed[0].a3_bgImage__img = {};
-					devDynamicContent.SeamlessFeed[0].a3_bgImage__img.Url = 'https://adpreview.incubeta.com/hyundai/images/f3-bg.jpg';
-					devDynamicContent.SeamlessFeed[0].a3_cta__json = '{\n    "config": {\n        "textValue__text": "LEARN MORE 3",\n "fontColour__hex": "#FFFFFF",\n "bgColour__hex": "#002C5F",\n  "textFontSize__number": 10\n    }\n}';
-					devDynamicContent.SeamlessFeed[0].a3_headline__text = 'Headline Frame 3';
-					devDynamicContent.SeamlessFeed[0].a3_headline__json = '{"config":{"fontColour__hex": "#ffffff","fontSize__select": 26}}';
-					devDynamicContent.SeamlessFeed[0].a3_subline__json = '{\n    "config": {\n        "value": "SUBLINE FRAME 3",\n        "show__select": "yes",\n        "fontColour__hex": "#ffffff"\n    }\n}';
 
-					// ─── Utm Naming Standards ────────────────────────────────────
-					devDynamicContent.SeamlessFeed[0].utm_source = 'utmsourcetest';
-					devDynamicContent.SeamlessFeed[0].utm_medium = 'utmmediumtest';
-					devDynamicContent.SeamlessFeed[0].utm_campaign = 'utmcampaigntest';
-					devDynamicContent.SeamlessFeed[0].utm_term = 'utmtermtest';
-					devDynamicContent.SeamlessFeed[0].utm_content = 'utmcontenttest';
-
-					// ─────────────────────────────────────────────────────────────
-					// ─── Helper Feed Example ─────────────────────────────────────
-					// ─────────────────────────────────────────────────────────────
-					devDynamicContent.HelperFeed = [{}];
-					devDynamicContent.HelperFeed[0]._id = 0;
-					devDynamicContent.HelperFeed[0].Color_hex = '#BD6238';
-
-					// ─────────────────────────────────────────────────────────────
-					// ─── Product Feed Example ────────────────────────────────────
-					// ─────────────────────────────────────────────────────────────
-					devDynamicContent.ProductFeed = [{}, {}];
+					devDynamicContent.StylingFeed = [{}];
+					devDynamicContent.StylingFeed[0]._id = 0;
+					devDynamicContent.StylingFeed[0].is_default = false;
+					devDynamicContent.StylingFeed[0].DYNAMIC_ELEMENTS = "";
+					devDynamicContent.StylingFeed[0].a0_petGender__json = "{   \n         \"male\": {        \n                \"name\": \"Milo\",\n                \"headlineText\": \"his\"\n          },\n         \"female\": {        \n                \"name\": \"Luna\",\n                \"headlineText\": \"her\"\n          },\n         \"none-gender\": {        \n                \"name\": \"Bailey\",\n                \"headlineText\": \"their\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a0_waitingTime__number = 5000.1;
+					devDynamicContent.StylingFeed[0].a1_exitURL__url = {};
+					devDynamicContent.StylingFeed[0].a1_exitURL__url.Url = "https://www.incubeta.com";
+					devDynamicContent.StylingFeed[0].a1_topLogo__img = {};
+					devDynamicContent.StylingFeed[0].a1_topLogo__img.Type = "file";
+					devDynamicContent.StylingFeed[0].a1_topLogo__img.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023138962_logo-top-tails.svg";
+					devDynamicContent.StylingFeed[0].a1_topBackgroundColor__hex = "#333333";
+					devDynamicContent.StylingFeed[0].a1_bottomBackgroundColor__hex = "#000000";
+					devDynamicContent.StylingFeed[0].a1_headline__text = "Discover your dog\'s unique recipe";
+					devDynamicContent.StylingFeed[0].a1_headline__json = "{   \n         \"css\": {        \n                \"font-size\": \"10px\",\n                \"color\": \"#ffffff\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a1_subline__text = "Tell us about your dog ...";
+					devDynamicContent.StylingFeed[0].a1_subline__json = "{   \n         \"css\": {        \n                \"font-size\": \"10px\",\n                \"color\": \"#ffffff\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a1_petSizeText__json = "{        \n                \"small\": \"Toy Breed\",\n                \"medium\": \"Medium Breed\",\n                \"big\": \"Large Breed\",\n                \"extraBig\": \"Giant Breed\"\n}\n";
+					devDynamicContent.StylingFeed[0].a1_petSize__json = "{   \n         \"css\": {        \n                \"font-size\": \"10px\",\n                \"color\": \"#ffffff\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a1_petSize_1__img = {};
+					devDynamicContent.StylingFeed[0].a1_petSize_1__img.Type = "file";
+					devDynamicContent.StylingFeed[0].a1_petSize_1__img.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023133613_dog-toy-Image-container-1x1.png";
+					devDynamicContent.StylingFeed[0].a1_petSize_2__img = {};
+					devDynamicContent.StylingFeed[0].a1_petSize_2__img.Type = "file";
+					devDynamicContent.StylingFeed[0].a1_petSize_2__img.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023133613_dog-toy-Image-container-1x1.png";
+					devDynamicContent.StylingFeed[0].a1_petSize_3__img = {};
+					devDynamicContent.StylingFeed[0].a1_petSize_3__img.Type = "file";
+					devDynamicContent.StylingFeed[0].a1_petSize_3__img.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023133613_dog-toy-Image-container-1x1.png";
+					devDynamicContent.StylingFeed[0].a1_question__text = "Tell us about your dog ...";
+					devDynamicContent.StylingFeed[0].a1_question__json = "{   \n         \"css\": {        \n                \"font-size\": \"10px\",\n                \"color\": \"#ffffff\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a1_sliderText__json = "{        \n                \"fromSize\": \"Toy\",\n                \"toSize\": \"Giant\"\n}\n";
+					devDynamicContent.StylingFeed[0].a1_slider__json = "{   \n         \"css\": {        \n                \"font-size\": \"10px\",\n                \"color\": \"#ffffff\"\n          },\n         \"slider\": {        \r\n                \"background-color\": \"#000000\",\r\n                \"dragger-color\": \"#ffffff\"\r\n          }\n}";
+					devDynamicContent.StylingFeed[0].a1_cta__text = "Next";
+					devDynamicContent.StylingFeed[0].a1_cta__json = "{   \r\n         \"css\": {        \r\n                \"font-size\": \"19px\",\r\n                \"color\": \"#0050AA\",\r\n                \"background-color\":\"#FFFFFF\"\r\n          }\r\n}";
+					devDynamicContent.StylingFeed[0].a2_headline__text = "Discover your dog\'s unique recipe";
+					devDynamicContent.StylingFeed[0].a2_headline__json = "{   \n         \"css\": {        \n                \"font-size\": \"10px\",\n                \"color\": \"#ffffff\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a2_questionText__json = "{        \n                \"q_top\": \"How old is your dog?\",\n                \"q_bottom\": \"and they are?\"\n}\n";
+					devDynamicContent.StylingFeed[0].a2_question__json = "{   \n         \"css\": {        \n                \"font-size\": \"10px\",\n                \"color\": \"#ffffff\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a2_petAge_1__img = {};
+					devDynamicContent.StylingFeed[0].a2_petAge_1__img.Type = "file";
+					devDynamicContent.StylingFeed[0].a2_petAge_1__img.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023133613_dog-toy-Image-container-1x1.png";
+					devDynamicContent.StylingFeed[0].a2_petAge_2__img = {};
+					devDynamicContent.StylingFeed[0].a2_petAge_2__img.Type = "file";
+					devDynamicContent.StylingFeed[0].a2_petAge_2__img.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023133613_dog-toy-Image-container-1x1.png";
+					devDynamicContent.StylingFeed[0].a2_petAge_3__img = {};
+					devDynamicContent.StylingFeed[0].a2_petAge_3__img.Type = "file";
+					devDynamicContent.StylingFeed[0].a2_petAge_3__img.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023133613_dog-toy-Image-container-1x1.png";
+					devDynamicContent.StylingFeed[0].a2_petAge__json = "{   \n         \"css\": {        \n                \"font-size\": \"10px\",\n                \"color\": \"#ffffff\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a2_genderButtonsText__json = "{        \n                \"button_left\": \"Male\",\n                \"button_right\": \"Female\"\n}\n";
+					devDynamicContent.StylingFeed[0].a2_genderButtons__json = "{   \n         \"css\": {        \n                \"font-size\": \"19px\",\n                \"color\": \"#0050AA\",\n                \"background-color\":\"#FFFFFF\",\n                \"border-color\":\"#000000\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a2_cta__text = "Next";
+					devDynamicContent.StylingFeed[0].a2_cta__json = "{   \n         \"css\": {        \n                \"font-size\": \"19px\",\n                \"color\": \"#0050AA\",\n                \"background-color\":\"#FFFFFF\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a3_headline__text = "Try [gender] unique recipe";
+					devDynamicContent.StylingFeed[0].a3_headline__json = "{   \n         \"css\": {        \n                \"font-size\": \"10px\",\n                \"color\": \"#ffffff\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a3_promotion__json = "{   \n         \"css\": {        \n                \"font-size\": \"10px\",\n                \"color\": \"#ffffff\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a3_packageName__json = "{   \n         \"css\": {        \n                \"font-size\": \"10px\",\n                \"color\": \"#ffffff\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a3_packageIconText__json = "{   \n         \"css\": {        \n                \"font-size\": \"10px\",\n                \"color\": \"#ffffff\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].a3_cta__text = "Next";
+					devDynamicContent.StylingFeed[0].a3_cta__json = "{   \n         \"css\": {        \n                \"font-size\": \"19px\",\n                \"color\": \"#0050AA\",\n                \"background-color\":\"#FFFFFF\"\n          }\n}";
+					devDynamicContent.StylingFeed[0].utm_term = "";
+					devDynamicContent.StylingFeed[0].utm_campaign = "";
+					devDynamicContent.StylingFeed[0].utm_medium = "";
+					devDynamicContent.StylingFeed[0].utm_content = "";
+					devDynamicContent.StylingFeed[0].utm_source = "";
+					devDynamicContent.StylingFeed[0].a0_ExtraCss__text = "";
+					devDynamicContent.StylingFeed[0].a0_ExtraJavacript__text = "";
+					devDynamicContent.HelperFeed_age = [{},{},{}];
+					devDynamicContent.HelperFeed_age[0]._id = 0;
+					devDynamicContent.HelperFeed_age[0].age_code = "age1";
+					devDynamicContent.HelperFeed_age[0].pet_age = "Puppy";
+					devDynamicContent.HelperFeed_age[0].package_icon = {};
+					devDynamicContent.HelperFeed_age[0].package_icon.Type = "file";
+					devDynamicContent.HelperFeed_age[0].package_icon.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023138962_logo-top-tails.svg";
+					devDynamicContent.HelperFeed_age[0].package_icon_text = "Growth";
+					devDynamicContent.HelperFeed_age[1].age_code = "age2";
+					devDynamicContent.HelperFeed_age[1].pet_age = "Adult";
+					devDynamicContent.HelperFeed_age[1].package_icon = {};
+					devDynamicContent.HelperFeed_age[1].package_icon.Type = "file";
+					devDynamicContent.HelperFeed_age[1].package_icon.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023138962_logo-top-tails.svg";
+					devDynamicContent.HelperFeed_age[1].package_icon_text = "Taste";
+					devDynamicContent.HelperFeed_age[2].age_code = "age3";
+					devDynamicContent.HelperFeed_age[2].pet_age = "Senior";
+					devDynamicContent.HelperFeed_age[2].package_icon = {};
+					devDynamicContent.HelperFeed_age[2].package_icon.Type = "file";
+					devDynamicContent.HelperFeed_age[2].package_icon.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023138962_logo-top-tails.svg";
+					devDynamicContent.HelperFeed_age[2].package_icon_text = "Joint support";
+					devDynamicContent.ProductFeed = [{}];
 					devDynamicContent.ProductFeed[0]._id = 0;
-					// ─────────────────────────────────────────────────────────────
-					devDynamicContent.ProductFeed[0].productName = 'name 1';
-					devDynamicContent.ProductFeed[0].imageLink = {};
-					devDynamicContent.ProductFeed[0].imageLink.Url = 'https://loreal.creatives.myseamless.io/dreamapi/testFolder/Paris/2.jpg';
-					devDynamicContent.ProductFeed[0].productPageUrl = {};
-					devDynamicContent.ProductFeed[0].productPageUrl.Url = 'https://www.loreal-paris.de/preference/74-dublin-kupferblond';
-					// ─────────────────────────────────────────────────────────────────
-					devDynamicContent.ProductFeed[1].productName = 'name 2';
-					devDynamicContent.ProductFeed[1].imageLink = {};
-					devDynamicContent.ProductFeed[1].imageLink.Url = 'https://loreal.creatives.myseamless.io/dreamapi/testFolder/Paris/1.jpg';
-					devDynamicContent.ProductFeed[1].productPageUrl = {};
-					devDynamicContent.ProductFeed[1].productPageUrl.Url = 'https://www.loreal-paris.de/preference/4-tahiti-naturbraun';
-
+					devDynamicContent.ProductFeed[0].is_default = false;
+					devDynamicContent.ProductFeed[0].product_image_s = {};
+					devDynamicContent.ProductFeed[0].product_image_s.Type = "file";
+					devDynamicContent.ProductFeed[0].product_image_s.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023138962_logo-top-tails.svg";
+					devDynamicContent.ProductFeed[0].product_image_m = {};
+					devDynamicContent.ProductFeed[0].product_image_m.Type = "file";
+					devDynamicContent.ProductFeed[0].product_image_m.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023138962_logo-top-tails.svg";
+					devDynamicContent.ProductFeed[0].product_image_l = {};
+					devDynamicContent.ProductFeed[0].product_image_l.Type = "file";
+					devDynamicContent.ProductFeed[0].product_image_l.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023138962_logo-top-tails.svg";
+					devDynamicContent.ProductFeed[0].product_image_xl = {};
+					devDynamicContent.ProductFeed[0].product_image_xl.Type = "file";
+					devDynamicContent.ProductFeed[0].product_image_xl.Url = "https://s0.2mdn.net/ads/richmedia/studio/26655713/26655713_20240118023138962_logo-top-tails.svg";
+					devDynamicContent.ProductFeed[0].product_promo = "<b>50% OFF<\/b>YOUR FIRST BOX";
+					devDynamicContent.ProductFeed[0].product_url = {};
+					devDynamicContent.ProductFeed[0].product_url.Url = "https://www.incubeta.com/?testProduct1";
 					Enabler.setDevDynamicContent(devDynamicContent);
-
 
 					// ─── Object Assignments ──────────────────────────────────────
 					/**
@@ -119,8 +162,8 @@
 					 * snippet.PF[0].productName
 					 * 
 					 */
-					_this.SF = dynamicContent.SeamlessFeed[0];
-					_this.HF = dynamicContent.HelperFeed;
+					_this.SF = dynamicContent.StylingFeed[0];
+					_this.HF = dynamicContent.HelperFeed_age;
 					_this.PF = dynamicContent.ProductFeed;
 				};
 
@@ -144,17 +187,34 @@
 				<div class="logo-top abs-x full-w">
 					<img class="center-x" src="images/logo-top-tails.svg">
 				</div>
-				<div class="headline abs center-x">Discover your dog’s unique recipe</div>
 
+				<div class="headline abs">
+					<p class="center-y abs-x">Discover your dog’s unique recipe</p>
+				</div>
+
+
+				
 				<div class="bottom-container abs full-w">
 
+					<div class="headline-question-1 abs">
+						<p class="center-y abs-x vln1">Tell us about your dog…</p>
+					</div>
+					
+					<div class="headline-question-2 abs center-x">
+						<p class="center-y abs-x vln1">How big is your dog?</p>
+					</div>
+
+					<div class="headline-slider-parent abs center-x">
+						<div class="headline-slider-a abs"><p>Toy</p></div>
+						<div class="headline-slider-b abs"><p>Giant</p></div>
+					</div>
+					
 					<div class="dog-container abs center-x full-h">
 						<div class="item item-1 abs full-w">
-							<div class="headline-dog-size abs center-x">DOG 1</div>
+							<div class="headline-dog-size abs center-x">Toy Breed</div>
 							<div class="dog-scaler abs full-w">
 								<div class="dog-image abs center-x"><img src="images/dog-toy-Image-container-1x1.png"></div>
 							</div>
-							
 						</div>
 
 						<div class="item item-2 abs full-w">
@@ -190,6 +250,9 @@
 
 				</div>
 				
+				<div class="cta-container-a abs-x z2">
+					<p class="center-y">Next</p>
+				</div>
 
 			</div>
 
