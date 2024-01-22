@@ -102,14 +102,36 @@ var adTech = (function () {
 
 		// Add hover effect to element.
 		// Accepts 3 parameters: the element, the background color, and the font color.
-		_this.addHover = function (el, bgColor, fontColor) {
+		// _this.addHover = function (el, bgColor, fontColor) {
+		// 	el.addEventListener('mouseover', function () {
+		// 		gsap.to(el, {   borderColor: fontColor, duration: 0.3 });
+		// 	});
+		// 	el.addEventListener('mouseout', function () {
+		// 		gsap.to(el, {   borderColor: bgColor, duration: 0.3 });
+		// 	});
+		// };
+
+		_this.addHoverIcons = function (el, colorOver, colorOut) {
 			el.addEventListener('mouseover', function () {
-				gsap.to(el, { backgroundColor: fontColor, color: bgColor, duration: 0.3 });
+				gsap.to(el, {   borderColor: colorOver, duration: 0.3 });
 			});
 			el.addEventListener('mouseout', function () {
-				gsap.to(el, { backgroundColor: bgColor, color: fontColor, duration: 0.3 });
+				gsap.to(el, {   borderColor: colorOut, duration: 0.3 });
 			});
 		};
+
+	
+	
+		// // Accepts 3 parameters: the element, the background color, and the font color.
+		// _this.addHover = function (el, bgColor, fontColor) {
+		// 	el.addEventListener('mouseover', function () {
+		// 		gsap.to(el, { backgroundColor: fontColor, color: bgColor, duration: 0.3 });
+		// 	});
+		// 	el.addEventListener('mouseout', function () {
+		// 		gsap.to(el, { backgroundColor: bgColor, color: fontColor, duration: 0.3 });
+		// 	});
+		// };
+		
 
 		// Checks if the URL is a valid image (jpg, png, gif, svg).
 		_this.isValidImageUrl = function (url) {

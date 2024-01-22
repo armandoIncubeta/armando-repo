@@ -1,8 +1,8 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// ─── GSAP PLUGINS ─────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 gsap.registerPlugin(Draggable) 
 gsap.registerPlugin(InertiaPlugin) 
-// ─────────────────────────────────────────────────────────────────────────────
-// ─── Global Variables ─────────────────────────────────────────────────
-// ─────────────────────────────────────────────────────────────────────────────
 
 // ─────────────────────────────────────────────────────────────────────────────
 // ─── Doubleclick Boilerplate ─────────────────────────────────────────────────
@@ -51,14 +51,20 @@ var creative = (function () {
 		// ─── 3. Data Mapping Initialization ──────────────────────────
 		mapData.init();
 
-		dogSlider.init();
-
 		// ─── 4. Asset Preloading ─────────────────────────────────────
 		// var assets = [snippet.SF.a1_bgImage__img.Url, snippet.SF.a2_bgImage__img.Url, snippet.SF.a3_bgImage__img.Url];
 
 		// ─── 5. Creative Animation ───────────────────────────────────
 		// adTech.preloadImages(assets, animation.init);
-		animation.init()
+
+		animation.init();
+		
+		// ─── 5. Creative Slider ───────────────────────────────────
+		dogSlider.init();
+		// ─── 6. CLICK interactions ───────────────────────────────────
+
+		userInteractions.init();
+
 		// Uncomment this line to log all exit reporting labels to the console for review.
 		// adTech.logReportingLabels();
 	};
@@ -70,9 +76,10 @@ var creative = (function () {
 // ─────────────────────────────────────────────────────────────────────────────
 var dogSlider = (function () {
 	var _this = {};
-
 	_this.init = function () {
 		// --
+		// CHANGE VALUE OF DOG SIZE/BREED Selection 
+		_this.dogBreed = "small";
 
 		let currentSelectedItem = 1; // Initialize with the default selected item
 		let isAnimating = false; // Flag to track whether an animation is in progress
@@ -150,7 +157,7 @@ var dogSlider = (function () {
 			percentage = (knobPosition / containerWidth) * 100;
 			progressBarWidth = percentage;
 			gsap.to(".slider-progress", { width: `${progressBarWidth}%`, duration: 0.1 });
-			console.log("percent", percentage)
+			// console.log("percent", percentage)
 			updateOnPercentage();
 
 		}
@@ -160,15 +167,19 @@ var dogSlider = (function () {
 			if (percentage >= 90) {
 				// console.log("point 4");
 				targetPoint = 4;
+				_this.dogBreed = "extraBig";
 			} else if (percentage >= 70) {
 				// console.log("point 3");
 				targetPoint = 3;
+				_this.dogBreed = "big";
 			} else if (percentage >= 30) {
 				// console.log("point 2");
 				targetPoint = 2;
+				_this.dogBreed = "medium";
 			} else if (percentage >= 0) {
 				// console.log("point 1");
 				targetPoint = 1;
+				_this.dogBreed = "small";
 			} else {
 				// console.log("none");
 				return;
@@ -204,6 +215,12 @@ var dogSlider = (function () {
 		updateProgressBar();
 		
 
+		// Return the reference to test2 from test1
+		// _this.getAnimationReference = function () {
+		// 	return animation;
+		// };
+
+
 		// ---
 	};
 
@@ -222,123 +239,181 @@ var mapData = (function () {
         // ─── Intro Frame - Preloader ─────────────────────────────────
 		// adTech.elem('.preloader').src = snippet.SF.a0_preloader__img.Url;
 
+
 		// ─── Frame 1 ─────────────────────────────────────────────────
 		var frameLabel = '.frame1';
 
-		//Mapping image
-		// if (adTech.isValidImageUrl(snippet.SF.a1_bgImage__img.Url)) {
-		// 	adTech.updClass(`${frameLabel} .bg-image {background-image:url(${snippet.SF.a1_bgImage__img.Url})}`);
-		// }
-		// adTech.elem(frame).backgroundImage = `url(${ Dynamic.SF().a0_Logo.Url })`;
-
-		//Mapping headline
-		// var obj = JSON.parse(snippet.SF.a1_headline__json);
-		// adTech.elem(`${frameLabel} .headline p`).innerHTML = snippet.SF.a1_headline__text;
-		// adTech.updClass(`${frameLabel} .headline p {color: ${obj.config.fontColour__hex}; font-size: ${obj.config.fontSize__select}px;}`);
-
-		// //Mapping subline
-		// var obj = JSON.parse(snippet.SF.a1_subline__json);
-		// if (obj.config.show__select.toLowerCase() == 'no') {
-		// 	vlib.ele(`${frameLabel} .subline`).style.display = 'none';
-		// }
-		// adTech.elem(`${frameLabel} .subline p`).innerHTML = obj.config.value;
-		// adTech.updClass(`${frameLabel} .subline p {color: ${obj.config.fontColour__hex}; font-size: ${obj.config.fontSize__select}px;}`);
-
-		// // CTA setup
-		// //var obj = JSON.parse(snippet.SF.a1_cta__json);
-		// adTech.elem(`${frameLabel} .cta-container p`).innerHTML = snippet.SF.a1_cta__text;
-		// adTech.updClass(`${frameLabel} .cta-container {${adTech.jsonToCss(snippet.SF.a1_cta__json)}}`);
-
-		// adTech.setCtaData(adTech.elem(`${frameLabel} > .overlay`), 'Frame1_Main_Background_Exit', snippet.SF.a0_exit__url.Url, true);
-		// adTech.setCtaData(adTech.elem(`${frameLabel} .cta-container > .overlay`), 'Frame1_Cta_Exit', snippet.SF.a0_exit__url.Url, true);
-
+		
 
 		// ─── Frame 2 ─────────────────────────────────────────────────
 		var frameLabel = '.frame2';
 
-		//Mapping image
-		// if (adTech.isValidImageUrl(snippet.SF.a2_bgImage__img.Url)) {
-		// 	adTech.updClass(`${frameLabel} .bg-image {background-image:url(${snippet.SF.a2_bgImage__img.Url})}`);
-		// }
-
-		// //Mapping headline
-		// var obj = JSON.parse(snippet.SF.a2_headline__json);
-		// adTech.elem(`${frameLabel} .headline p`).innerHTML = snippet.SF.a2_headline__text;
-		// adTech.updClass(`${frameLabel} .headline p {color: ${obj.config.fontColour__hex}; font-size: ${obj.config.fontSize__select}px;}`);
-
-		// //Mapping subline
-		// var obj = JSON.parse(snippet.SF.a2_subline__json);
-		// if (obj.config.show__select.toLowerCase() == 'no') {
-		// 	vlib.ele(`${frameLabel} .subline`).style.display = 'none';
-		// }
-		// adTech.elem(`${frameLabel} .subline p`).innerHTML = obj.config.value;
-		// adTech.updClass(`${frameLabel} .subline p {color: ${obj.config.fontColour__hex}; font-size: ${obj.config.fontSize__select}px;}`);
-
-		// // CTA data setup
-		// var obj = JSON.parse(snippet.SF.a2_cta__json);
-		// adTech.elem(`${frameLabel} .cta-container p`).innerHTML = obj.config.textValue__text;
-		// adTech.elem(`${frameLabel} .cta-container`).style.backgroundColor = obj.config.bgColour__hex;
-		// adTech.elem(`${frameLabel} .cta-container`).style.color = obj.fontColour__hex;
-		// // Set CTA data. Accepts 3 parameters: element, reporting label, exit URL, and UTM variables (if true).
-		// adTech.setCtaData(adTech.elem(`${frameLabel} > .overlay`), 'Frame2_Main_Background_Exit', snippet.SF.a0_exit__url.Url, true);
-		// adTech.setCtaData(adTech.elem(`${frameLabel} .cta-container > .overlay`), 'Frame2_Cta_Exit', snippet.SF.a0_exit__url.Url, true);
-		// // Add hover effect to CTA. Accepts 3 parameters: element, background color, and font color.
-		// adTech.addHover(adTech.elem(`${frameLabel} .cta-container`), obj.config.bgColour__hex, obj.config.fontColour__hex);
+	
 
 		// ─── Frame 3 ─────────────────────────────────────────────────
 		var frameLabel = '.frame3';
 
-		// //Mapping image
-		// if (adTech.isValidImageUrl(snippet.SF.a3_bgImage__img.Url)) {
-		// 	adTech.updClass(`${frameLabel} .bg-image {background-image:url(${snippet.SF.a3_bgImage__img.Url})}`);
-		// }
 
-		// //Mapping headline
-		// var obj = JSON.parse(snippet.SF.a3_headline__json);
-		// adTech.elem(`${frameLabel} .headline p`).innerHTML = snippet.SF.a3_headline__text;
-		// adTech.updClass(`${frameLabel} .headline p {color: ${obj.config.fontColour__hex}; font-size: ${obj.config.fontSize__select}px;}`);
+		// adTech.elem('.cta-container-a').addEventListener("click", function() {
+		// 	console.log("GO TO FRAME 2")
+		// 	animation.frame2(new gsap.timeline(), 2, 10)
+		// })
 
-		// //Mapping subline
-		// var obj = JSON.parse(snippet.SF.a3_subline__json);
-		// if (obj.config.show__select.toLowerCase() == 'no') {
-		// 	vlib.ele(`${frameLabel} .subline`).style.display = 'none';
-		// }
-		// adTech.elem(`${frameLabel} .subline p`).innerHTML = obj.config.value;
-		// adTech.updClass(`${frameLabel} .subline p {color: ${obj.config.fontColour__hex}; font-size: ${obj.config.fontSize__select}px;}`);
-
-		// // CTA data setup
-		// var obj = JSON.parse(snippet.SF.a3_cta__json);
-		// adTech.elem(`${frameLabel} .cta-container p`).innerHTML = obj.config.textValue__text;
-		// adTech.elem(`${frameLabel} .cta-container`).style.backgroundColor = obj.config.bgColour__hex;
-		// adTech.elem(`${frameLabel} .cta-container`).style.color = obj.fontColour__hex;
-		// // Set CTA data. Accepts 3 parameters: element, reporting label, exit URL, and UTM variables (if true).
-		// adTech.setCtaData(adTech.elem(`${frameLabel} > .overlay`), 'Frame3_Main_Background_Exit', snippet.SF.a0_exit__url.Url, true);
-		// adTech.setCtaData(adTech.elem(`${frameLabel} .cta-container > .overlay`), 'Frame3_Cta_Exit', snippet.SF.a0_exit__url.Url, true);
-		// // Add hover effect to CTA. Accepts 3 parameters: element, background color, and font color.
-		// adTech.addHover(adTech.elem(`${frameLabel} .cta-container`), obj.config.bgColour__hex, obj.config.fontColour__hex);
-
-		// // KEEP AT THE BOTTOM OF FUNCTION
-		// // add event listener for all CTA clickable elements with class .overlay
-		// adTech.elem('body .overlay').forEach((element) => {
-		// 	element.addEventListener('click', adTech.exits, false);
-		// });
+	
 	};
 
 	return _this;
 })();
 
 // ─────────────────────────────────────────────────────────────────────────────
+// ─── CLICK EVETS ────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
+
+var userInteractions = (function () {
+	var _this = {};
+
+	_this.init = function () {
+		
+		//Set color of - MOVE TO MAPDATA
+		_this.hoverColor = "#000000"
+		_this.hoverColorOut = "#FFFFFF"
+		
+
+		//EVENT LISTENERS
+
+		function handleMouseOver() {
+			gsap.to(this, { borderColor: _this.hoverColor, duration: 0.3 });
+		}
+		function handleMouseOut() {
+			gsap.to(this, { borderColor: _this.hoverColorOut, duration: 0.3 });
+		}
+		//Age Icon Hover
+		adTech.elem('.f2-icon').forEach(element => {
+			// Add event listeners using the named functions
+			element.addEventListener('mouseover', handleMouseOver);
+			element.addEventListener('mouseout', handleMouseOut);
+		});
+		//Gender button Hover
+		adTech.elem('.gender-select-cta').forEach(element => {
+			// Add event listeners using the named functions
+			element.addEventListener('mouseover', handleMouseOver);
+			element.addEventListener('mouseout', handleMouseOut);
+		});
+
+		adTech.elem('.cta-container-next').forEach(element => {
+			// Add event listeners using the named functions
+			element.addEventListener('mouseover', handleMouseOver);
+			element.addEventListener('mouseout', handleMouseOut);
+		});
+
+
+		//AGE SELECTION
+
+		adTech.elem(`.f2-icon`).forEach(icon => {
+			icon.addEventListener('click', function() {
+				const dogAge = icon.getAttribute('data-dog-age');
+
+			
+				adTech.elem('.f2-icon').forEach(element => {
+					gsap.to(element, { borderColor: _this.hoverColorOut, duration: 0.3 });
+					// Add event listeners using the named functions
+					element.addEventListener('mouseover', handleMouseOver);
+					element.addEventListener('mouseout', handleMouseOut);
+				});
+				this.removeEventListener('mouseout', handleMouseOut);
+				gsap.to(this, { borderColor: _this.hoverColor, duration: 0.3 });
+
+				switch (dogAge) {
+				case 'age1':
+					// Handle logic for age1 when clicked
+					console.log('Dog age is age1');
+					break;
+				case 'age2':
+					// Handle logic for age2 when clicked
+					console.log('Dog age is age2');			
+					break;
+				case 'age3':
+					// Handle logic for age3 when clicked
+					console.log('Dog age is age3');
+					break;
+				default:
+					// Handle logic for other cases when clicked
+					console.log('Unknown dog age');
+				}
+			});
+		});
+
+		//Gender Selection
+		adTech.elem(`.gender-select-cta`).forEach(icon => {
+			icon.addEventListener('click', function() {
+				const genderSelect = icon.getAttribute('data-gender-select');
+
+				adTech.elem('.gender-select-cta').forEach(element => {
+					gsap.to(element, { borderColor: _this.hoverColorOut, duration: 0.3 });
+					// Add event listeners using the named functions
+					element.addEventListener('mouseover', handleMouseOver);
+					element.addEventListener('mouseout', handleMouseOut);
+				});
+
+				gsap.to(this, { borderColor: _this.hoverColor, duration: 0.3 });
+				this.removeEventListener('mouseout', handleMouseOut);
+
+				switch (genderSelect) {
+				case 'male':
+					console.log('Selected Male');
+					break;
+				case 'female':
+					console.log('Selected Female');
+					break;
+				default:
+					// Handle logic for other cases when clicked
+				}
+			});
+		});
+
+		//Go to Next Frame Button Clicks
+		adTech.elem(`.cta-container-next`).forEach(icon => {
+			icon.addEventListener('click', function() {
+				const nextBtn = icon.getAttribute('data-next-button');
+
+				gsap.to(this, { borderColor: _this.hoverColor, duration: 0.3 });
+				this.removeEventListener('mouseout', handleMouseOut);
+
+				switch (nextBtn) {
+				case 'frame1':
+					// Handle logic for age1 when clicked
+					console.log('Goto Frame 2');
+					animation.frame2(new gsap.timeline(), 2, 10)
+					break;
+				case 'frame2':
+					console.log('Goto End Frame');
+					animation.frame3(new gsap.timeline(), 2, 10)
+					break;
+				default:
+					// Handle logic for other cases when clicked
+				}
+			});
+		});
+
+
+	};
+
+	return _this;
+})();
+
+
+// ─────────────────────────────────────────────────────────────────────────────
 // ─── Creative Animation ──────────────────────────────────────────────────────
 // ─────────────────────────────────────────────────────────────────────────────
 var animation = (function () {
 	var _this = {};
-
+	
 	_this.init = function () {
 		// Configure animation timeline
 		var tl = gsap.timeline(); // GSAP master timeline
-		var displayTime = 0.1; // The the display time of each frame in seconds
+		var displayTime = 2; // The the display time of each frame in seconds
 		var zIndex = 10; // Ensures the animating frame is the top most frame
-
+	
 		/**
 		 * The animation per frame is dynamic.
 		 * Arrange them in the order you want them to play.
@@ -370,6 +445,7 @@ var animation = (function () {
 		// tl.fromTo(frameLabel + ' .subline', { y: -21, autoAlpha: 0 }, { y: 0, autoAlpha: 1 }, '-=0.3');
 		// tl.fromTo(frameLabel + ' .cta-container', { y: 21, autoAlpha: 0 }, { y: 0, autoAlpha: 1 });
 
+
 		tl.to({}, {}, `+=${displayTime}`); // Delay of this frame before going to the next frame.
 	};
 
@@ -379,7 +455,7 @@ var animation = (function () {
 		tl.set(frameLabel, { zIndex: zIndex });
 
 		// Your frame animation goes here.
-	
+		tl.fromTo(frameLabel, { autoAlpha: 0 }, { autoAlpha: 1 });
 
 		tl.to({}, {}, `+=${displayTime}`); // Delay of this frame before going to the next frame.
 	};
@@ -390,10 +466,14 @@ var animation = (function () {
 		tl.set(frameLabel, { zIndex: zIndex });
 
 		// Your frame animation goes here.
-	
+		tl.fromTo(frameLabel, { autoAlpha: 0 }, { autoAlpha: 1 });
 
 		tl.to({}, {}, `+=${displayTime}`); // Delay of this frame before going to the next frame.
 	};
+
+	
+
+	
 
 	return _this;
 })();
@@ -409,3 +489,5 @@ function studioExitsTmp() {
 	Enabler.exit("Frame3_Main_Background_Exit");
 	Enabler.exit("Frame3_Cta_Exit");
 }
+
+
